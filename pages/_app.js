@@ -11,5 +11,4 @@ const MyApp = ({ Component, pageProps }) => (
     </div>
   </ThemeProvider>
 );
-
 export default MyApp;
