@@ -1,12 +1,15 @@
 import "../src/styles/globals.css";
 import "../src/styles/theme.css";
+import { ThemeProvider } from "../src/context/ThemeProvider";
 
 const MyApp = ({ Component, pageProps }) => (
-  <div id="app" className="dark" /* Dark Mode - Exercise */>
-    <div className="px-4 m-auto max-w-7xl h-full">
-      <Component {...pageProps} />
+  <ThemeProvider>
+    <div className="h-full px-4 m-auto max-w-7xl">
+      <div className="flex md:flex-row-reverse">
+        <Component {...pageProps} />
+      </div>
     </div>
-  </div>
+  </ThemeProvider>
 );
 
 export default MyApp;
