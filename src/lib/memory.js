@@ -1,3 +1,4 @@
+
 /**
  * Copied from https://bost.ocks.org/mike/shuffle/
  * @param array Array to be shuffled
@@ -7,7 +8,7 @@ export const shuffle = (array) => {
   const copy = [];
   let arrayLength = array.length;
   let i;
-
+// 
   // While there remain elements to shuffle…
   while (arrayLength) {
     // Pick a remaining element…
@@ -50,6 +51,7 @@ export const CARD_STATE = {
   FIND: "find",
   RETURNED: "returned",
 };
+
 
 export const getInitialMemory = () => {
   return shuffle([...animals, ...animals]).map((v, i) => ({
