@@ -1,3 +1,4 @@
+
 /**
  * Copied from https://bost.ocks.org/mike/shuffle/
  * @param array Array to be shuffled
@@ -50,6 +51,7 @@ export const CARD_STATE = {
   FIND: "find",
   RETURNED: "returned",
 };
+
 
 export const getInitialMemory = () => {
   return shuffle([...animals, ...animals]).map((v, i) => ({

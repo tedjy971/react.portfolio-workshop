@@ -1,10 +1,10 @@
 import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
 
-export const GITHUB_USERNAME = 'melvynx';
+export const GITHUB_USERNAME = 'tedjy971';
 
-export const EMAIL = 'test@email.com';
+export const EMAIL = 'gamiette.teddy@gmail.com';
 
-export const FULL_NAME = 'BeginReact';
+export const FULL_NAME = 'Teddy G';
 
 export const SOCIAL_NETWORKS = [
   {

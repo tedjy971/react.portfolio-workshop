@@ -1,23 +1,26 @@
-import { SectionWrapper } from '../atom/SectionWrapper';
-import { Project } from './Project';
+import { useEffect, useReducer } from "react";
+import { getListOfUrlRepositoriesUrl } from "../../lib/api-url";
+import { GITHUB_USERNAME } from "../../lib/config";
+import { SectionWrapper } from "../atom/SectionWrapper";
+import { Project } from "./Project";
+import { Loader } from "../atom/Loader";
+import { useFetch } from "../../hooks/useFetch";
 
 export const ProjectSection = () => {
-  // GitHub Repository - Exercise
-  const projects = [
-    {
-      name: 'DEMO',
-      description: 'DEMO',
-      stargazerCount: 12,
-      url: 'https://github.com',
-      homepageUrl: 'https://github.com',
-    },
-  ];
+  
+  const state = useFetch( getListOfUrlRepositoriesUrl(GITHUB_USERNAME) );
+  if (state.status === "idle" || state.status === "pending") {
+    return <Loader />;
+  } else if (state.error) {
+    return <p>Error: {state.error.message}</p>;
+  }
 
   return (
     <SectionWrapper title="Projects">
       <div className="flex flex-wrap justify-center gap-8">
-        {/* GitHub Repository - Exercise (replace this) */}
-        <Project {...projects[0]} />
+        {state.data?.map((project) => (
+          <Project key={project.name} {...project} />
+        ))}
       </div>
     </SectionWrapper>
   );

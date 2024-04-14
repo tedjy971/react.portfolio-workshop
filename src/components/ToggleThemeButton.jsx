@@ -20,7 +20,7 @@ export const ToggleThemeButton = () => {
     }
 
     return (
-        <div className="overflow-hidden relative p-2 rounded-full border-primary">
+        <div className="relative p-2 overflow-hidden rounded-full border-primary">
             <MdOutlineWbSunny
                 onClick={switchTheme}
                 className={clsx("relative h-6 w-6 cursor-pointer text-primary", {
